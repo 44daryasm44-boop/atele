@@ -19,7 +19,7 @@ export default function StepContacts({
     <form onSubmit={handleSubmit} noValidate>
       <Steps current={2} />
 
-      <button type="button" className="link link--back" onClick={onBack}>
+      <button type="button" className="link link--back" onClick={onBack} disabled={isSending}>
         ← Назад
       </button>
       <h2 id="request-title" className="title">
@@ -85,7 +85,7 @@ export default function StepContacts({
           className="checkbox"
           checked={contacts.consent}
           aria-invalid={errors.consent ? true : undefined}
-          aria-describedby="consent-note"
+          aria-describedby={errors.consent ? 'consent-note consent-error' : 'consent-note'}
           onChange={(e) => onChange('consent', e.target.checked)}
         />
         <span>
@@ -94,7 +94,7 @@ export default function StepContacts({
           <span className="consent__note" id="consent-note">Учебная демонстрация: данные не передаются и не сохраняются.</span>
         </span>
       </label>
-      {errors.consent && <p className="field__error">{errors.consent}</p>}
+      {errors.consent && <p className="field__error" id="consent-error">{errors.consent}</p>}
 
       <button
         type="submit"
