@@ -66,7 +66,11 @@ h1 { font-size: 56px; line-height: 1.3; font-weight: 800; margin-top: 24px; }
 .set-bar { left: auto; right: 32px; bottom: 24px; transform: none; padding: 6px 6px 6px 24px; display: flex; gap: 32px; align-items: center; border: 1px solid var(--line); border-radius: 999px; background: white; box-shadow: 0 8px 24px #0002; z-index: 5; font-size: 14px; }
 .empty { padding: 80px 20px; text-align: center; }
 .empty p { margin-block: 16px 24px; }
-.modal { box-shadow: 0 24px 64px #0003; outline: none; max-height: calc(100dvh - 32px); }
+.modal { box-shadow: 0 24px 64px #0003; outline: none; max-height: calc(100dvh - 32px); scrollbar-gutter: stable; scrollbar-width: thin; scrollbar-color: #d4d4d4 transparent; overscroll-behavior: contain; }
+.modal::-webkit-scrollbar { width: 6px; }
+.modal::-webkit-scrollbar-track { background: transparent; }
+.modal::-webkit-scrollbar-thumb { background: #d4d4d4; border: 2px solid transparent; border-radius: 999px; background-clip: content-box; }
+.modal::-webkit-scrollbar-thumb:hover { background-color: #a8a8a8; }
 .modal .title { font-size: 32px; font-weight: 800; line-height: 42px; }
 .modal .title em { font-size: inherit; }
 .modal .hint, .goal__text, .note, .consent { color: var(--muted); }
@@ -87,7 +91,7 @@ h1 { font-size: 56px; line-height: 1.3; font-weight: 800; margin-top: 24px; }
 .success__icon { display: block; border: 0; }
 .timeline__item--later { color: var(--muted); }
 .timeline__status { font-weight: 400; }
-@media (min-width: 900px) { .modal--contacts { height: min(852px, calc(100dvh - 32px)); overflow: hidden; } .modal--contacts form { height: 100%; display: flex; flex-direction: column; } .modal--contacts .fields { flex: 1; min-height: 100px; overflow-y: auto; padding-right: 8px; scrollbar-width: thin; } .modal--contacts .fields > * { flex-shrink: 0; } .modal--contacts .title { margin-top: 8px; } }
+@media (min-width: 900px) { .modal--contacts .title { margin-top: 8px; } }
 @media (max-width: 1100px) { .container { padding-inline: 32px; } .header nav { gap: 20px; } .filter-line { align-items: flex-start; flex-direction: column; gap: 8px; } .terms { font-size: 13px; } .catalog { gap: 48px 20px; } .custom-card { padding: 28px; } }
 @media (max-width: 760px) { .container { padding-inline: 20px; } .header { padding: 18px 20px; flex-wrap: wrap; gap: 16px; } .header .brand { font-size: 17px; } .header > .button { height: 44px; font-size: 13px; padding-inline: 16px; } .header nav { order: 3; width: 100%; font-size: 14px; } h1 { font-size: 42px; } .intro { font-size: 16px; line-height: 26px; } .terms { grid-template-columns: 1fr; gap: 12px; padding-block: 20px; } .terms > span, .terms > span:last-child { padding: 0; border: 0; text-align: left; } .catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 16px; } .product, .product--wide { grid-column: span 1; } .product--wide .product__photo { aspect-ratio: 1; } .product h2 { font-size: 18px; } .product__description, .product__weight { font-size: 13px; } .product__partner { font-size: 11px; } .custom-card { grid-column: span 2; grid-row: auto; min-height: 300px; } .cooperation { grid-template-columns: 1fr; gap: 24px; margin-block: 64px; padding-top: 32px; } .cooperation h2 { font-size: 30px; } .footer { padding-block: 40px 100px; } .footer__top, .footer__bottom { flex-direction: column; align-items: flex-start; } .set-bar { right: 12px; left: 12px; bottom: 12px; gap: 10px; justify-content: space-between; padding-left: 16px; font-size: 12px; } .set-bar .button { height: 48px; font-size: 13px; padding-inline: 18px; } }
 @media (max-width: 440px) { .catalog { grid-template-columns: 1fr; } .product, .product--wide, .custom-card { grid-column: 1; } .product h2 { font-size: 22px; } .product__description, .product__weight { font-size: 15px; } .modal { padding: 44px 20px 24px; border-radius: 20px; } .modal .title { font-size: 27px; line-height: 36px; } .goal { padding: 16px; } .goal__title { font-size: 15px; } .goal__text { font-size: 13px; } .set__head { font-size: 13px; gap: 12px; } .timeline__item { grid-template-columns: 26px 1fr; gap: 8px; font-size: 13px; } .timeline__status { grid-column: 2; font-size: 12px; } .cooperation .button { width: 100%; font-size: 14px; padding-inline: 12px; } }
