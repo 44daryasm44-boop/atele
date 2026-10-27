@@ -5,7 +5,7 @@
 - [Макет каталога](https://www.figma.com/design/Ii7Eav0ez7rSQvnrWINKCw/?node-id=34-2144)
 - [Макет формы и её состояний](https://www.figma.com/design/Ii7Eav0ez7rSQvnrWINKCw/?node-id=19-1438)
 - [Прототип формы](https://www.figma.com/proto/Ii7Eav0ez7rSQvnrWINKCw/?node-id=1-697&starting-point-node-id=1%3A697)
-- Адрес для публикации: https://44daryasm44-boop.github.io/atele/
+- [Рабочая страница](https://44daryasm44-boop.github.io/atele/)
 
 ## Назначение
 
@@ -24,28 +24,6 @@
 
 Форма закрывается крестиком, клавишей Escape или нажатием на затемнение. При открытии блокируется прокрутка страницы; фокус остаётся внутри диалога и возвращается после закрытия.
 
-## Запуск в VS Code
-
-Требуется Node.js 20.19+ (можно использовать Node.js 24).
-
-Откройте папку проекта в VS Code, затем в меню «Терминал → Создать терминал»:
-
-```sh
-npm ci
-npm start
-```
-
-Адрес локального сайта появится в терминале. Чтобы остановить сервер, нажмите Ctrl+C.
-
-## Сборка и GitHub Pages
-
-```sh
-npm run build
-```
-
-Webpack создаёт папку `docs` с HTML, CSS, JavaScript и изображениями. Пути относительные, поэтому страница работает в подпапке `/atele/`.
-
-После загрузки исходников и `docs` в ветку `main`: Settings → Pages → Deploy from a branch → ветка `main`, папка `/docs` → Save. Статус публикации и рабочая ссылка появятся в Pages. Ссылку прототипа перед просмотром следует проверить в режиме Present в Figma.
 
 ## Устройство проекта
 
