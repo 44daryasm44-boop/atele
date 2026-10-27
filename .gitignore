@@ -2,4 +2,4 @@
 .thumbs
 /node_modules
 yarn-error.log
-/dev-build
+/dev-build/dev_build

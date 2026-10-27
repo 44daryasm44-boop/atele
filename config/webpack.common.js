@@ -12,7 +12,9 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve('.', 'docs')
+    path: path.resolve('.', 'docs'),
+    publicPath: './',
+    clean: true
   },
   module: {
     rules: [
@@ -22,7 +24,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]]
           }
         }
       },
@@ -53,9 +55,10 @@ module.exports = {
   },
   plugins: [new MiniCssExtractPlugin(), ...htmlPages],
   optimization: {
-    minimizer: [new CssMinimizerPlugin()]
+    minimizer: ['...', new CssMinimizerPlugin()]
   },
   resolve: {
+    extensions: ['.js', '.jsx'],
     fallback: {
       stream: require.resolve('stream-browserify')
     }
